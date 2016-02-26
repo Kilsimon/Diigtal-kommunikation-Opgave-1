@@ -3,6 +3,7 @@ T = 2;
 Ts = 0.2;
 ti = -5*T:Ts:5*T;
 puls = sinc(ti/T);
+plot (ti,puls)
 
 
 %% Delopgave 2
