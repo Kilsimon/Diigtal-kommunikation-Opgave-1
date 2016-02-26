@@ -1,4 +1,8 @@
 %% Delopgave 1
+clc
+clear all
+close all
+
 T = 2;
 Ts = 0.2;
 ti = -5*T:Ts:5*T;
