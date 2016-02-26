@@ -1,5 +1,8 @@
-%% Opgave 1
+%% Delopgave 1
 T = 2;
 Ts = 0.2;
 ti = -5*T:Ts:5*T;
 puls = sinc(ti/T);
+
+
+%% Delopgave 2
