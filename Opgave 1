@@ -11,3 +11,10 @@ plot (ti,puls)
 
 
 %% Delopgave 2
+
+a = puls(51:1:101);
+b = zeros(1,99);
+c = puls(1:1:50);
+
+lpuls = [a,b,c];
+plot(lpuls)
