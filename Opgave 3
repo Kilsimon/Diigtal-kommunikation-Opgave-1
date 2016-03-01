@@ -13,7 +13,7 @@ c = puls(1:1:50);
 lpuls = [a,b,c];
 %plot(lpuls)
 
-Lpuls = real(fftshift(lpuls,N));
+Lpuls = real(fftshift(Ts*fft(lpuls,N)));
 f=(0:N-1)/P;
 plot(f,Lpuls)
 
@@ -24,3 +24,10 @@ hold on
 puls1 = real(fftshift(Ts*fft(puls,N)));
 
 plot(F,puls1)
+
+%%2
+Lpuls = real(fftshift(lpuls));
+puls1 = real(fftshift(puls));
+plot(Lpuls)
+hold on
+plot(puls1)
