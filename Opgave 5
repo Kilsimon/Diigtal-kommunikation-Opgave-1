@@ -16,3 +16,10 @@ r = r(51:end-50);
 figure
 plot(r)
 
+%% find energispektret
+close all
+r1=(sqrt((r).^2));
+plot(r1)
+r2=real(fftshift(fft(r1)));
+figure
+plot(r2)
