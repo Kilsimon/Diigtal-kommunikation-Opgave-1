@@ -1,1 +1,22 @@
 
+T=2;
+Ts=0.200;
+P=200*Ts;
+N=200;
+ti=-5*T:Ts:5*T;
+puls=sinc(ti/T);
+
+a = puls(51:1:101);
+b = zeros(1,99);
+c = puls(1:1:50);
+
+lpuls = [a,b,c];
+%plot(lpuls)
+
+Lpuls = real(fftshift(lpuls,N));
+f=(0:N-1)/P;
+plot(f,Lpuls)
+
+F = (0:N-1)/(1/Ts);
+
+plot(F,Lpuls)
