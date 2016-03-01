@@ -19,8 +19,8 @@ plot(f,Lpuls)
 
 F = (0:N-1)/(1/Ts);
 
-%%plot(F,Lpuls)
-
+plot(F,Lpuls)
+hold on
 puls1 = real(fftshift(Ts*fft(puls,N)));
 
 plot(F,puls1)
