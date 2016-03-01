@@ -1,0 +1,31 @@
+clc;
+clear all;
+close all;
+
+T=2;
+Ts=0.200;
+P=200*Ts;
+N=200;
+ti=-5*T:Ts:5*T;
+puls=sinc(ti/T);
+
+a = puls(51:1:101);
+b = zeros(1,99);
+c = puls(1:1:50);
+
+lpuls = [a,b,c];
+
+Lpuls = real(fft(lpuls)*Ts);
+
+pulsG = 0 * Lpuls;
+for m=1:length(Lpuls)
+    pulsG(m) = Lpuls(m)*exp(-i*2*pi*(50*(m-1)/N));
+end
+
+plot(real(fftshift(pulsG)),'r')
+figure
+plot(real(fftshift(fft(puls,N)*Ts)),'g')
+figure
+plot(imag(fftshift(pulsG)),'r')
+figure
+plot(imag(fftshift(fft(puls,N))*Ts),'g')
