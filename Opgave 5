@@ -1,1 +1,18 @@
+%% OPG 5
+clear all
+close all
+clc
+% taget fra opgavesættet:
+a=zeros(1,10000);
+a(1:10:end)=sign(randn(1,1000));
+% puls fra opg 1
+T = 2;
+Ts = 0.2;
+ti = -5*T:Ts:5*T;
+puls = sinc(ti/T);
+%
+r = conv(puls,a);
+r = r(51:end-50);
+figure
+plot(r)
 
