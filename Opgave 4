@@ -23,3 +23,15 @@ puls1 = real(fftshift(puls,N));
 Elpuls = real(fftshift((lpuls).^2));
 
 plot(F,Elpuls)
+
+
+%%2
+close all
+
+fourpuls = real(fftshift(puls,N));
+Elpuls = real(fftshift((lpuls).^2));
+
+plot(Elpuls)
+hold on
+Epuls = real(fftshift((fourpuls).^2,N));
+plot(Epuls)
